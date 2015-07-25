@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <head>
+    <title>:)</title>
+  </head>
+  <body>
+    <button id="up">up</button>
+    <button id="left">left</button>
+    <button id="right">right</button>
+    <button id="down">down</button>
+    <button id="stop">stop</button>
+
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      var socket = io();
+      $('button').on('click', function(e) {
+        socket.emit('move', e.target.id);
+      });
+    </script>
+  </body>
+</html>
